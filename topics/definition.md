@@ -22,7 +22,7 @@ Here are the core responsibilities of an architect(3):
 ## Table of Contents
 1. [Implementation](#implementation)
     1. [Structure](#sub-topic-1)
-    2. [Characterists](#sub-topic-2)
+    2. [Characteristics](#sub-topic-2)
     3. [Decisions]()
         1. [Variances]()
     4. [Principles]()
@@ -40,6 +40,8 @@ Here are the core responsibilities of an architect(3):
 
 ### Implementation
 
+#### Characteristics
+"fitness functions" testing characteristics of the architecture, like page load // pg 17 <sup>1</sup>
 #### Decisions
 > An architect is expected to define the architecture decisions and design principles used to guide technology decisions within the team, department, or across the enterprise (4)
 
@@ -56,6 +58,15 @@ Here are the core responsibilities of an architect(3):
 - Depending on the context, an architect may decide to upend the current implementation because something better has come along
 - Not spending time revisiting the codebase can lead to structural decay
 - Testing/release environment agility
+
+### Experience
+
+#### Emergent Technologies
+
+**How can an architect make moving application logic to a different framework easier?**
+- loose coupling
+- separation of concerns
+- inversion of control
 
 
 
