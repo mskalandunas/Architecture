@@ -22,6 +22,10 @@ Importance of getting the application architecture right
 What is a tier?
 A logical separation of components in an app/service. Physical separation at the component level, not code.
 
+### Why tiers?
+- Assigning specific tasks to individual components facilitates a loosely coupled architecture. Modifications or updates made on a specific component does not impact the other components
+- Different tiers having designated roles facilitate easy management & maintenance of the system as a whole. It’s easier to add new features in the application as the components are loosely coupled & code change made in one component does not affect the other components
+
 ### What is a component?
 - Database
 - Backend application server
@@ -62,13 +66,14 @@ A Two-tier application involves a client and a server. The client would contain 
 - Productivity app
 
 #### Advantages
-- Fewer network calls to BE because most code and all of the UI reside on the user's device
+- Fewer network calls to BE because most code and all of the UI reside on the user's device (minimizes network latency)
+- Data control is out of the user's hands
 - Single app download with occasional updates available
 - less money on servers
 
 #### Disadvantages
 - Architectural severely limits app scope
-- Code still could be reverse engineered
+- Business logic still could be reverse engineered
 
 
 ### Three Tier Applications
@@ -81,8 +86,40 @@ In a three-tier application, the user interface, application logic & the databas
 - News website
 
 #### Advantages
-- Scope is less limited given the distribution across multiple components
-- Decoupling prevents spaghetti across high-level layers
+- Business logic is no longer stored on the user's device
+- Data control
 
 #### Disadvantages
 - More infrastructure to manage
+
+
+### N Tier Applications
+AKA distributed systems. An N-tier application is an application which has more than three components involved.
+
+- Cache
+- Message queues
+- Load balancer
+- Search servers
+- Large process components
+- Web services
+
+#### What are some n tier apps?
+- Facebok
+- Instagram
+- Airbnb
+- World of Warcraft
+
+#### Why so many tiers?
+- SRP
+- SoC
+
+#### Advantages
+- a single component should not be able to take down the system
+
+##### Notes
+- SRP won't work if implementers tightly couple code or business logic across multiple layers
+    - stored procedures being a good example -- what if a team wants to use a new db?  Now all of that business logic will need a new home
+- on layers: in the industry layers of an application typically means the user interface layer, business layer, service layer, or the data access layer.
+    - layers represent the organization of code and how it's broken into components
+    - tiers represet the physical separation of components
+
