@@ -103,6 +103,8 @@ AKA distributed systems. An N-tier application is an application which has more 
 - Large process components
 - Web services
 
+![high level n tier architecture diagram](./images/tiers_5.jpeg)
+
 #### What are some n tier apps?
 - Facebok
 - Instagram
