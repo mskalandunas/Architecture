@@ -62,6 +62,8 @@ Config & type can differ depending on the case
 ## What is REST?
 > REST stands for Representational State Transfer. It’s a software architectural style for implementing web services. Web services implemented using the REST architectural style are known as the RESTful Web services.
 
+When the backend implementation & the clients are decoupled, any number of new clients can be introduced into the system without affecting the backend.
+
 - Adheres to the REST architectural constraints
 - is an interface
 - uses HTTP
@@ -82,6 +84,8 @@ Given the exposed endpoints, the backend does not need to worry about the client
 
 ### API Gateway
 ![API Gateway Layer](./images/web_architecture_4.jpeg)
+When the backend & the clients are decoupled, any number of new clients can be introduced into the system without affecting the backend.
+
 - Layer that acts as a gateway into the system
 - encapsulates business logic
 - handles all client requests, regardless of client type
@@ -125,6 +129,8 @@ Data can be fetched in several ways:
 - AJAX uses an XMLHttpRequest object for sending requests
 
 ## HTTP Push
+- the application is a real-time application like an online multiplayer game, a LIVE sports app
+- Good for when we need to reduce the number of client requests hitting the server every now and then, checking for new information
 ### Time to Live (TTL)
 If a request doesn't receive a response within x time (dependent on browser), the connection times out, and the client must re-send the request.
 
@@ -132,6 +138,10 @@ Open connections consume resources, and there's a limit to the amount of open co
 
 ### Persistent Connections
 > A persistent connection is a network connection between the client & the server that remains open for further requests & the responses, as opposed to being closed after a single communication.
+
+When the frequency of request-response is high. Persistent connections avert the need for opening and closing a new connection, between the client & the server, every time a conversation happens. By keeping the connection opened for a longer period of time.
+
+When we are certain that the response time of the server will be more than the TTL time to live set by the browser.
 
 HTTP push-based communication between the client and server.
 
@@ -180,5 +190,36 @@ https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server
 ### Streaming of HTTP
 - Ideal for large data being streamed over HTTP by breaking into smaller chunks
 - HTML5 & JavaScript Stream API
+- client and server must conform to streaming settings
 
 ![Stream and events](./images/web_architecture_7.jpeg)
+
+- used for massive multimedia content like large images, video, audio
+- used to experience partially downloaded assets by allowing chunks to be played
+
+https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts
+
+## Client-Side vs. Server-Side Rendering
+### Client-Side Rendering
+Components used for rendering a web page:
+- Browser engine
+- Rendering engine
+- JavaScript interpreter
+- Networking & the UI backend
+- Data storage etc.
+
+Rendering engine contructs the DOM tree, renders & paints, which all takes some time
+
+### Server-Side Rendering
+To avoid rendering time on the client, developers render the UI on the server by generating and sending HTML directly in the response
+
+- Faster rendering of the UI by averting UI loading time since page is already created
+
+### Use Cases for Server-Side & Client-Side Rendering
+- SSR is perfect for static content, like static sites or wordpress blogs where it can also offer SEO benefits
+- Modern websites are highly dependent on AJAX
+    - content sections need to be fetched and rendered on the fly
+- many concurrent users start to overburden the server
+- Client-side rendering works best for modern dynamic ajax-based websites
+- A hybrid approach leveraging the important parts of both techniques can be the most beneficial for the modern web
+    - Consider an approach where the server renders placeholder content while the clients fetch and then populate sections
