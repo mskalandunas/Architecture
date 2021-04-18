@@ -123,3 +123,62 @@ Data can be fetched in several ways:
 - Once updates are complete, the client-side app can update with the completed data
     - common on sports and news sites where new information is dynamically displayed without reloading
 - AJAX uses an XMLHttpRequest object for sending requests
+
+## HTTP Push
+### Time to Live (TTL)
+If a request doesn't receive a response within x time (dependent on browser), the connection times out, and the client must re-send the request.
+
+Open connections consume resources, and there's a limit to the amount of open connections a server can have at any one point. If the connection doesn't close and new ones are being opened, the server will eventually run out of memory.  This is why the TTL exists.
+
+### Persistent Connections
+> A persistent connection is a network connection between the client & the server that remains open for further requests & the responses, as opposed to being closed after a single communication.
+
+HTTP push-based communication between the client and server.
+
+![pull vs push](./images/web_architecture_6.jpeg)
+
+### Heartbeat Interceptors
+> Now you might be wondering how is a persistent connection possible if the browser kills the open connections to the server every X seconds?
+
+Heartbeat interceptors are blank req/res between the client and server used to prevent the browser from killing the connection.
+
+- can be resource intensive
+- sometimes vital to realizing a feature
+    - online multiplayer game
+        - so many quick actions mean that the heartbeats are rarely needed
+- long open connections can be implemented using long polling, web sockets, and server-sent events
+
+https://www.pubnub.com/blog/websockets-and-long-polling-in-javascript-ruby-and-python/
+
+## HTTP Push-based Technologies
+### Web Sockets
+- used for persistent bi-directional low-latency data flow between client to the server and back
+- chat apps, social streams, browser-based MMOs -- all which have far more read/write than a regular web app
+- client/server connection can be open as long as is necessary
+- TCP based instead of HTTP based
+
+https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+https://www.html5rocks.com/en/tutorials/websockets/basics/
+
+### Long Polling
+- Server holds the response until it finds an update to send to the client
+- connection stays open a bit longer when compared to regular polling
+- server doesn't return an empty response
+- if the connection breaks, the client needs to reestablish it
+- fewer requests since the connection is left open longer, reducing bandwidth consumption
+- good for simple async data fetches
+
+### HTML5 Event Source API and Server-Sent Events
+https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+
+- Server automatically pushes the data to the client whenever updates are available
+- Incoming server messages are treated as Events
+- Client establishes an initial request and the server perpetuates it with updates
+- `EventSource` HTML5 API is used
+- Twitter, stock feeds, and real time notifications are examples of this tech in use
+
+### Streaming of HTTP
+- Ideal for large data being streamed over HTTP by breaking into smaller chunks
+- HTML5 & JavaScript Stream API
+
+![Stream and events](./images/web_architecture_7.jpeg)
