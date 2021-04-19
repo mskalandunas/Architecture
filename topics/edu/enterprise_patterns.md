@@ -150,3 +150,98 @@ Object Oriented Programming
         - reduces complexity through meaningful signaling of intention
         - helps solve the communication problem
         - but it's just JS at the end of the day
+
+Feature Complexity
+
+4 elements of programming
+- Describing things (nouns)
+- Performing actions (verbs)
+- Making (decisions)
+- Repeating via iteration
+
+  Translates to =>
+    - Data Structures
+    - Functions
+    - Conditions
+    - Iterators
+
+Code should reflect human parseable language
+"Find all of the donuts with sprinkles on the green tray"
+
+const selectedTray = trays.find(tray => tray.color === 'green');
+const sprinkleDonuts = selectedTray.donuts.filter(donut => donut.sprinkles);
+
+child.fetch(spinkeDonuts);
+
+Objects as Nouns
+```javascript
+const client = {
+  id: 1,
+  firstName: 'John',
+  lastName: 'Doe',
+  company: 'Acme, Inc'
+};
+```
+
+Properly model the domain you're in
+Get domain model correct
+
+Modeling the domain of a physical therapist
+- Model a physical therapist
+- Model a patient
+  - naively one may think that the therapist and the patient may have a direct relationship
+  - in reality, patients may have many therapists and therapists many patients
+  - ends up being 1:many, 1:many, with a relationship dependent on the treatment
+
+If you understand the domain, there's a lot you can infer about the application
+
+An interface is a way for us to describe what something is -- a contract
+```TypeScript
+interface Client {
+  id?: string;
+  firstName: string;
+  lastName: string;
+  company: string;
+}
+
+const clients: Client[] = [
+  {
+    id: '1',
+    firstName: 'John',
+    lastName: 'Doe',
+    company: 'Acme, Inc'
+  }
+  ...
+]
+```
+
+Now the client object and collection can be strongly typed.
+
+if an object is an instance of something
+interface is a contract
+A class is simply a blueprint to create object
+
+A blueprint is not a house -- a class is not an instance of an object -- a blueprint defines the behavior and parameters that are goign to exist for an object when created
+
+interface is like regulations -- an object must exist within the bounds of the interface
+
+Class is
+- a blueprint for defining how an obj will be created
+  - props
+  - behavior
+
+```typescript
+class VIPClient implements Client {
+  firstName;
+  lastName;
+  company;
+
+  constructor(firstName, lastName, company) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.company = company;
+  }
+}
+```
+
+Defining and Typing Objects
