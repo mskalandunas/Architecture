@@ -245,3 +245,117 @@ class VIPClient implements Client {
 ```
 
 Defining and Typing Objects
+```typescript
+interface BaseEntity {
+  id: string | null // string better than number because 26+ alphanumeric vs 10 digits
+}
+
+interface Client extends BaseEntity {
+  firstName: string;
+  lastName: string;
+  company: string;
+}
+```
+
+State
+<!-- Define it as an interface -->
+```typescript
+interface ClientsState {
+  clients: Client[];
+  currentClient: Client;
+}
+```
+
+Defining complex state
+```typescript
+interface ProjectsState {
+  projects: Project[],
+  currentProject: Project
+}
+
+interface AppState {
+  clientsState: ClientsState;
+  projectsState: ProjectsState;
+}
+
+const appState: AppState = {
+  clientsState: initialClientsState,
+  projectsState: initialProjectsState
+};
+```
+
+Methods as Verbs
+- methods should return something
+  - This makes methods more easily testable
+  - creates a contract
+
+```typescript
+class ClientStore {
+  clients: Client[];
+  currentClient: Client;
+
+  load(clients) {
+    this.clients = clients;
+  }
+
+  read() {
+    return this.clients;
+  }
+
+  select(client) {
+    this.currentClient = client;
+  }
+
+  create(client) {
+    this.clients.push(client); // this is bad but hang on
+  }
+}
+```
+
+```typescript
+class ClientStore {
+  clients: Client[];
+  currentClient: Client;
+
+  load(clients) {
+    this.clients = clients;
+  }
+
+  read() {
+    return this.clients;
+  }
+
+  select(client) {
+    this.currentClient = client;
+  }
+
+  create(client) {
+    this.clients.push(client); // this is bad but hang on
+  }
+}
+```
+
+```typescript
+class ClientStore {
+  clients: Client[];
+  currentClient: Client;
+
+  load(newClients: Client[]) {
+    this.clients = newClients;
+  }
+
+  read() {
+    return this.clients;
+  }
+
+  select(client) {
+    this.currentClient = client;
+  }
+
+  create(client) {
+    this.clients = [...this.clients, client];
+  }
+}
+```
+
+Use single interface file for domain model in order to pass it between apps
