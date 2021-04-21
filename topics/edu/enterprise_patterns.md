@@ -359,3 +359,13 @@ class ClientStore {
 ```
 
 Use single interface file for domain model in order to pass it between apps
+
+Remember:
+- No nested state
+- No nested logic
+- Do not violate the SRP
+
+The fifth element of programming:
+- Time -- how do we manage time?
+  - Observable Streams
+    - encapsulate, transport, and transform data
