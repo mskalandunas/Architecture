@@ -369,3 +369,5 @@ The fifth element of programming:
 - Time -- how do we manage time?
   - Observable Streams
     - encapsulate, transport, and transform data
+
+Iterator + Observer
