@@ -102,5 +102,65 @@ App types:
 - Amazon Aurora
 - Google Cloud SQL
 
+## NoSQL Databases
+- no SQL
+- JSON-based, built for web 2.0
+- High frequency read/write
 
+Used in:
+- Twitter
+- LIVE real-time sports apps
+- MMOs
+
+### How Is A NoSQL Database Different From A Relational Database?
+#### Scalability
+- SQL-based relational databases have scalability problems
+- Scaling relational DBs is not trivial
+- Have to be sharded or replicated to run smoothly on a cluster
+    - high human intervention
+
+- NoSQL dbs can add new nodes on the fly
+- NoSQL dbs sacrifice strong consistency, ACID transactions in order to easily scale horizontally over a cluster/across data centers
+- eventually consistent instead of strongly consistent
+
+#### Clustering
+- NoSQL run on clusters
+- minimal human intervention
+
+## Features of NoSQL databases
+### Pros
+- Developer-friendly
+    - gentle learning curve
+        - SQL databases require lots of time learning how to design well-normalized tables, setting up relationships, and trying to minimize joins
+    - Schema-less
+        - Designing a schema of a relational db is tough because change is difficult
+        - NoSQL dbs don't have strictly enforced schemas, so things can be changed/spread around easily
+        - no relationships (pro/con)
+- O(1) lookups
+    - fetching data with its key, usually an id, is constant time which makes the Dbs fast
+
+### Cons
+- Because of the eventually consistent nature, they are inconsistent until all clusters have been updated
+- No support for ACID transactions
+
+### Popular NoSQL Dbs
+- MongoDB
+- Redis
+- Neo4J
+- Cassandra
+
+## When to Pick a NoSQL Database
+- handling a large number of read/writes
+    - offers fast scaling
+- more design flexibility since NoSQL models, design, etc are easier to change
+- eventual consistency
+    - values are inconsistent until distributed servers catch up
+- data analytics
+    - time-series databases, document oriented, wide-column all lend themselves well to data
+
+## Is NoSQL More Performant Than SQL?
+No.
+
+- NoSQL & SQL are equally performant when used for their strengths
+- Both can be used in a single application for different purposes
 
