@@ -370,4 +370,25 @@ The fifth element of programming:
   - Observable Streams
     - encapsulate, transport, and transform data
 
-Iterator + Observer
+## Iterator + Observer
+Observable: Iterator(state) + Observer(communication)
+
+Observer
+- some event has happened at some time
+- think of restaurant pager
+
+Iterator
+- reliably access state/data in a collection
+
+State over time
+Synchronously get values over time using functions (pull, pulling the data to you)
+Asynchronously using Promises (pushing the value to you)
+
+Output => Input
+Event  => Handler
+
+Observables manage state over time extremely well
+
+Creating a deterministic, reversible system
+"If you know everything about a system at some intant in time, and you also know the equations that govern how the system changes, then you can predict the future."
+  - Leonard Susskind
