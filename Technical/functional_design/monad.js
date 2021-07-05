@@ -7,8 +7,10 @@
  */
 
 const Monad = value => ({
+  // chain is the same as flatMap; unwrapped mapping
   chain: fn => fn(value),
   fold: () => value,
+  // mapping
   map: fn => Monad.of(fn(value)),
   toString: () => `Monad(${vlaue})`
 });
@@ -19,4 +21,15 @@ const Maybe;
 
 const Either;
 
-const Task;
+// https://kwijibo.github.io/task-monad-in-javascript/
+const Task = fork => ({
+  map: f => Task((reject, resolve) => fork(
+    reject,
+    a => resolve(f(a))
+  )),
+  chain: f => Task((reject, resolve) => fork(
+    reject,
+    a => f(a).fork(reject, resolve))
+  ),
+  fork
+});
