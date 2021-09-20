@@ -55,6 +55,14 @@ Learn the domain you're coding within.
 - The Design of Everyday Things, by Don Norman
 
 ## Programming Paradigms
+The beginning of the journey -- understanding various programming paradigms.
+
+- Structured Programming
+- Functional Programming
+- Object-Oriented Programming
+
+From Uncle Bob in _"Clean Architecture"_
+> Object-Oriented Programming is the tool best suited for defining how we cross architectural boundaries with polymorphism and plugins  Functional programming is the tool we use to push data to the boundaries of our applications.  Structured programming is the tool we use to write algorithms
 ___
 
 ## Sources
