@@ -62,7 +62,14 @@ The beginning of the journey -- understanding various programming paradigms.
 - Object-Oriented Programming
 
 From Uncle Bob in _"Clean Architecture"_
-> Object-Oriented Programming is the tool best suited for defining how we cross architectural boundaries with polymorphism and plugins  Functional programming is the tool we use to push data to the boundaries of our applications.  Structured programming is the tool we use to write algorithms
+> Object-Oriented Programming is the tool best suited for defining how we cross architectural boundaries with polymorphism and plugins.  Functional programming is the tool we use to push data to the boundaries of our applications.  Structured programming is the tool we use to write algorithms.
+
+All three programming paradigms have their place.  Algorithms are written as performantly as possible, and are relegated into their own utility, parallel to the domain layer.  Functional concepts are used for day-to-day data stream management.  Object-oriented concepts exist as the communication barrier between layers as well as a domain model.  Advanced functional concepts can work similarly (HOF for example).
+
+### Suggested  Resources
+Clean Architecture, by Robert C. Martin
+Domain Modeling Made Functional, by Scott Wlaschin
+Concepts of Programming Languages, by Robert W. Sebesta
 ___
 
 ## Sources
