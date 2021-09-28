@@ -70,6 +70,33 @@ All three programming paradigms have their place.  Algorithms are written as per
 Clean Architecture, by Robert C. Martin
 Domain Modeling Made Functional, by Scott Wlaschin
 Concepts of Programming Languages, by Robert W. Sebesta
+
+## Object-Oriented Programming
+- Principles
+  - Inheritance
+  - Polymorphism
+  - Abstraction
+  - Encapsulation
+- Paradigm Features
+  - Abstract classes
+  - Concrete classes
+  - Scope / visibility
+  - Interfaces
+- Model-Driven Design
+  - Understand domain models
+  - Undertand anemic models
+  - Layered architectures
+  - Domain language
+  - Class invariants
+
+Object-oriented programming is structured for architecture.  It lends itself especially well to creating domain models given its principles -- encapsulation, inheritance, polymorphism, and abstraction.  This helps create a software implementation of a business's mental model.
+
+### Suggested Resources
+Clean Architecture, by Robert C. Martin
+Object-Design Style Guide, by Matthias Noback
+Domain-Driven Design, by Eric Evans
+
+
 ___
 
 ## Sources
