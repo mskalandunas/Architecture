@@ -91,12 +91,28 @@ Concepts of Programming Languages, by Robert W. Sebesta
 
 Object-oriented programming is structured for architecture.  It lends itself especially well to creating domain models given its principles -- encapsulation, inheritance, polymorphism, and abstraction.  This helps create a software implementation of a business's mental model.
 
+https://khalilstemmler.com/articles/domain-driven-design-intro/
+
 ### Suggested Resources
 Clean Architecture, by Robert C. Martin
 Object-Design Style Guide, by Matthias Noback
 Domain-Driven Design, by Eric Evans
 
+## Design Principles
+When should composition be used over inheritence?  When should an abstract class be used?
 
+Helpful principles:
+- Composition over inheritance
+- Encapsulate what varies
+- Program against abstractions, not concretions
+- The hollywood principle: "Don't call us, we'll call you"
+- The [SOLID principles](https://khalilstemmler.com/articles/solid-principles/solid-typescript/), especially the [Single responsibility principle](https://khalilstemmler.com/articles/solid-principles/single-responsibility/)
+- DRY (Do Not Repeat Yourself)
+- [YAGNI (You Aren't Gonna Need It)](https://khalilstemmler.com/wiki/yagni/)
+
+### Suggested Resources
+- Head First Design Patterns
+- Design Patterns, by the GoF
 ___
 
 ## Sources
