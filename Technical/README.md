@@ -113,6 +113,33 @@ Helpful principles:
 ### Suggested Resources
 - Head First Design Patterns
 - Design Patterns, by the GoF
+
+## Design Patterns
+Categorized solutions to software problems.  These come in several categories -- creational, structural, and behavior.
+
+### Creational
+Creational patterns control how objects are created.
+
+- Singleton, ensuring only a single instance of a class can exist
+- Abstract Factory pattern, for creating an instance of several families of classes
+- Prototype, for starting out with an instance that is cloned from an existing one
+
+### Structural
+Structural patterns simplify how relationships between components are defined.
+
+- Adapter, for creating an interface enabling disparate interfaces to work together
+- Bridge, for splitting a class that should be one or more into a set of classes belonging to a hierarchy, enabling implementations to be developed independently of each other
+- Decorator, for adding responsibilities to objects dynamically
+
+### Behavioral
+Common patterns for facilitating elegant communication between objects.
+
+- Template, for deferring the exact steps of an algorithm to a subclass
+- Mediator, for defining available communication channels between classes
+- Observer, for enabling classes to subscribe to something of interest and be notified of changes
+
+### Notes
+Keep YAGNI in mind and keep things as simple as possible.  Know when and when not to bother with design patterns.
 ___
 
 ## Sources
