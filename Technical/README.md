@@ -145,6 +145,21 @@ Keep YAGNI in mind and keep things as simple as possible.  Know when and when no
 Head First Design Patterns, by various authors
 
 ## Architectural Principles
+These principles help to design application structure.
+
+### Component Design Princinples
+- [The Stable Abstraction Principle](https://khalilstemmler.com/wiki/stable-abstraction-principle/)
+- [The Stable Dependency Principle](https://khalilstemmler.com/wiki/stable-dependency-principle/)
+- The Acyclic Dependency Principle
+
+### Rules vs. Implementation Details
+- [Policy vs. Detail](https://khalilstemmler.com/articles/enterprise-typescript-nodejs/clean-nodejs-architecture/)
+
+### Subdomains
+- [Subdomains](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/#:~:text=to%20identify%20the-,subdomains,-that%20the%20features) and how to identify the subdomains that the features of your application belongs within
+
+### Suggested Resources
+Clean Architecture, by Robert C. Martin
 ___
 
 ## Sources
