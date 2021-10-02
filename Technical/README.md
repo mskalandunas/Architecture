@@ -6,13 +6,13 @@ I'm using Khalil Stemmler's _["How to Learn Software Design and Architecture | T
 Ordered overview of categories:
 - [Clean Code](#clean-code)
 - [Programming Paradigms](#programming-paradigms)
-- Object-Oriented Programming
-- Design Principles
-- Design Patterns
-- Architectural Principles
-- Architectural Styles
-- Archcitectural Patterns
-- Enterprise Patterns
+- [Object-Oriented Programming](#object-oriented-programming)
+- [Design Principles](#design-principles)
+- [Design Patterns](#design-patterns)
+- [Architectural Principles](#architectural-principles)
+- [Architectural Styles](#architectural-styles)
+- [Archcitectural Patterns](#architectural-patterns)
+- [Enterprise Patterns](#enterprise-patterns)
 
 This starts simply, maybe from a newer professional's view, and gradually increases in scope.  Low level to high level.
 
@@ -140,6 +140,11 @@ Common patterns for facilitating elegant communication between objects.
 
 ### Notes
 Keep YAGNI in mind and keep things as simple as possible.  Know when and when not to bother with design patterns.
+
+### Suggested Resources
+Head First Design Patterns, by various authors
+
+## Architectural Principles
 ___
 
 ## Sources
