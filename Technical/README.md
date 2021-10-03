@@ -223,6 +223,28 @@ Architectural patterns describe in detail how to implement architectural styles.
 ### Suggested Resources
 Domain-Driven Design, by Eric Evans
 Implementing Domain-Driven Design, by Vaughn Vernon
+
+## Enterprise Patterns
+Architectural patterns lead to complex solutions.  In MVC, for example, the view holds the presentation code, the controller translates commands/queries from the view into requests that are handled by the model and returned by the controller.  Where do these things go?
+
+- Validation logic
+- Invariant rules
+- Domain events
+- Use cases
+- Complex queries
+- Business logic
+
+There's a construct for everything.  Some of these can be pulled from DDD:
+
+- [Entities](https://khalilstemmler.com/articles/typescript-domain-driven-design/entities/) describe models that have an identity.
+- [Value Objects](https://khalilstemmler.com/articles/typescript-value-object/) are models that have no identity, and can be used in order to encapsulate validation logic.
+- [Domain Events](https://khalilstemmler.com/articles/typescript-domain-driven-design/chain-business-logic-domain-events/) are events that signify some relevant business event occurring, and can be subscribed to from other components.
+
+### Suggested Resources
+Patterns of Enterprise Application Architecture, by Martin Fowler
+Enterprise Integration Patterns, by Gregor Hohpe
+Domain Driven Design, by Eric Evans
+Implementing Domain-Driven Design, by Vaughn Vernon
 ___
 
 ## Sources
