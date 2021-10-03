@@ -160,6 +160,58 @@ These principles help to design application structure.
 
 ### Suggested Resources
 Clean Architecture, by Robert C. Martin
+
+## Architectural Styles
+> Architecture is about the stuff that matters
+
+Architecture identifies what a system needs in order to be successful through iterations, and then stacking the odds of success by choosing the architecture that best fits the requirements.
+
+A layered architecture may work best for a system with a lot of business logic complexity.
+
+An application requiring lots of real-time events may benefit from a pub-sub architecture.
+
+Similar to design patterns, Architectual styles have 3 high level categories.
+
+### Structural
+Projects with varying levels of components and wide-ranging functionality will either benefit or suffer from adopting a structural architecture.
+
+- Component-based architectures emphasize separation of concerns between the individual components within a system. Think Google for a sec. Consider how many applications they have within their enterprise (Google Docs, Google Drive, Google Maps, etc). For platforms with lots of functionality, component-based architectures divide the concerns into loosely coupled independent components. This is a horizontal separation.
+- Monolithic means that the application is combined into a single platform or program, deployed altogether. Note: You can have a component-based AND monolithic architecture if you separate your applications properly, yet deploy it all as one piece.
+- Layered architectures separate the concerns vertically by cutting software into infrastructure, application, and domain layers.
+  - Infrastructure Details
+    - Controllers
+    - Routes
+    - Databases
+    - Caches
+    - ORMs
+  - Adapter Logic
+    - Access to infra and external APIs
+  - Application Layer
+    - Use Cases
+    - Features
+    - Services
+  - Domain
+    - Entities
+    - Value Objects
+    - Domain Events
+
+### Messaging
+Behavioral design + functional programming principles.
+
+- Event-Driven architectures view all signficant changes to state as events. For example, within a [vinyl-trading app](https://github.com/stemmlerjs/white-label), a offer's state might change from "pending" to "accepted" when both parties agreee on the trade.
+- Publish-subscribe architectures build on top of the Observer design pattern by making it the primary communication method between the system itself, end-users / clients, and others systems and components.
+
+### Distributed
+Components of the system are deployed separately and operate by communicating over a network protocol.  Effective for scaling and delegating responsibility to other components.
+
+- Client-server architecture. One of the most common architectures, where we divide the work to be done between the client (presentation) and the server (business logic).
+- Peer-to-peer architectures distribute application-layer tasks between equally-privileged participants, forming a peer-to-peer network.
+
+**Note:** Distributed systems can also benefit from messaging architecture as well.
+
+### Suggested Resources
+Clean Architecture, by Robert C. Martin
+Software Architect's Handbook, by Joseph Ingeno
 ___
 
 ## Sources
