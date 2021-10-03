@@ -212,6 +212,17 @@ Components of the system are deployed separately and operate by communicating ov
 ### Suggested Resources
 Clean Architecture, by Robert C. Martin
 Software Architect's Handbook, by Joseph Ingeno
+
+## Architectural Patterns
+Architectural patterns describe in detail how to implement architectural styles.  
+
+- Domain-Driven Design is an approach to software development against really complex problem domains. For DDD to be most successful, we need to implement a layered architecture in order to separate the concerns of a domain model from the infrastrural details that makes the application actually run, like databases, webservers, caches, etc.
+- Model-View Controller is probably the most well-known architectural pattern for developing user interface-based applications. It works by dividing the app into 3 components: model, view, and controller. MVC is incredibly useful when you're first starting out, and it helps you piggyback towards other architectures, but there hit's a point when we realize [MVC isn't enough](https://khalilstemmler.com/articles/enterprise-typescript-nodejs/when-crud-mvc-isnt-enough/) for problems with lots of business logic.
+- Event sourcing is a functional approach where we store only the transactions, and never the state. If we ever need the state, we can apply all the transactions from the beginning of time.
+
+### Suggested Resources
+Domain-Driven Design, by Eric Evans
+Implementing Domain-Driven Design, by Vaughn Vernon
 ___
 
 ## Sources
